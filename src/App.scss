@@ -1,0 +1,21 @@
+@import 'partials/_setup.scss';
+@import 'partials/_main.scss';
+@import 'partials/_card.scss';
+@import 'partials/_palette.scss';
+
+
+:root {
+	--base: #EBDCC2;
+}
+
+body {
+	background:#F5E7E0;
+	height:100vh;
+	display:flex;
+	align-items:center;
+}
+
+img {
+	width:100%;
+	display: block;
+}

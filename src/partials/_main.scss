@@ -1,0 +1,7 @@
+main {
+    // border:1px solid red;
+    display:grid;
+    grid-template-columns:1fr 1fr 500px 1fr;
+    grid-template-rows:600px;
+    margin:0 auto; 
+}
