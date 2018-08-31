@@ -12,22 +12,26 @@ class DesignPalette extends Component {
                 image:'',
         }
     }
-    addContent = (message, color) => {
+    addContent = (message, color, image) => {
         // console.log(color);
         this.setState({
             message: message,
             cardColor: color,
+            image:image,
         }, () => {
             this.props.updateCard(this.state.message, this.state.cardColor)
             console.log(this.state);
         })
+    }
+    changeImage = (image) => {
+        this.props.selectImage(image)
     }
 
     render(){
         return (
             <section className="design">
                 <ColorPalette addContent={this.addContent} />
-                <ImageCatalog />
+                <ImageCatalog changeImage={this.changeImage}/>
             </section>
             
         )

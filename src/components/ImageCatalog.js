@@ -13,26 +13,32 @@ class ImageCatalog extends Component {
             image: ['../assets/halloween-pumpkin.png', '../assets/cake-slice.png', '../assets/heart.png', '../assets/present.png', '../assets/soft-serve.png', '../assets/condolences.png'],
         }
     }
+    clickImage = (e) => {
+        // console.log(e.target.src);
+        this.props.changeImage(e.target.src)
+        // console.log(this.state.image);
+    }
+
     render(){
         return (
             <section className="catalog">
                 <figure className="imageType">
-                    <img src={halloween} alt=""/>
+                    <img onClick={this.clickImage} src={halloween} alt=""/>
                 </figure>
                 <figure>
-                    <img src={cake} alt=""/>
+                    <img onClick={this.clickImage} src={cake} alt=""/>
                 </figure>
                 <figure>
-                    <img src={heart} alt=""/>
+                    <img onClick={this.clickImage} src={heart} alt=""/>
                 </figure>
                 <figure>
-                    <img src={present} alt=""/>
+                    <img onClick={this.clickImage} src={present} alt=""/>
                 </figure>
                 <figure>
-                    <img src={icecream} alt=""/>
+                    <img onClick={this.clickImage} src={icecream} alt=""/>
                 </figure>
                 <figure>
-                    <img src={sad} alt=""/>
+                    <img onClick={this.clickImage} src={sad} alt=""/>
                 </figure>
             </section>
         )

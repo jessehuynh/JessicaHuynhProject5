@@ -36,6 +36,13 @@ class ColorPalette extends Component {
         this.props.addContent(this.state.message, this.state.cardColor);
 
     }
+    presetColor = (e) => {
+        this.setState({
+            cardColor: e.target.value,
+        }, () => {
+            this.props.addContent(this.state.cardColor)
+        })
+    }
     render(){
         return (
             <section className="colours">
@@ -43,10 +50,10 @@ class ColorPalette extends Component {
             <CustomProperties 
             global
             properties={{'--base': this.state.cardColor}}/>
-                <button className="pink">#F0D3D1</button>
-                <button className="blue">#CDD6EE</button>
-                <button className="beige">#DFC39F</button>
-                <input onChange={this.handleColorChange} type="color" id="cardColor" name="base" value={this.state.cardColor}/>
+                <button onClick={this.presetColor} className="pink" value="#F0D3D1">#F0D3D1</button>
+                <button onClick={this.presetColor} className="blue" value="#CDD6EE">#CDD6EE</button>
+                <button onClick={this.presetColor} className="beige" value="#DFC39F">#DFC39F</button>
+                <input onChange={this.handleColorChange} type="color" id="cardColor" name="base" maxLength="200" value={this.state.cardColor}/>
             
                 <label className="visuallyhidden" htmlFor="message"></label>
                 <input onChange={this.handleTextChange} type="text" id="message" placeholder="Insert your message" value={this.state.message}/>

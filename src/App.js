@@ -27,9 +27,16 @@ class App extends Component {
     const savedCard = {
       message: this.state.message,
       cardColor: this.state.cardColor,
+      image: this.state.image
     }
     dbRef.push(savedCard);
     console.log(savedCard);
+  }
+  deleteCard = (cardID) => {
+    // delete from firebase
+    console.log(cardID);
+    // const cardDbRef = firebase.database().ref(`/${cardID}`);
+    // cardDbRef.remove();
   }
   updateCard = (message, color) => {
     this.setState({
@@ -39,12 +46,17 @@ class App extends Component {
 
     })
   }
+  selectImage = (image) => {
+    this.setState({
+      image: image
+    });
+  }
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <main>
-        <Card addText={this.state.message} />
-        <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard}/>
+        <Card addText={this.state.message} userImage={this.state.image}/>
+        <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard} selectImage={this.selectImage}/>
         <button onClick={this.saveToFirebase} className="create">Create E-Card</button>
       </main>
     );

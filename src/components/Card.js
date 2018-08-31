@@ -5,26 +5,18 @@ import Image from './Image';
 
 
 class Card extends Component {
-    // handleChange = () => {
-    //     document.documentElement.style.setProperty('--base', this.props.selectedColor)
-    //     // this.setState({
-    //     //     message:this.state.message,
-    //     //     // cardColor: selectedColor,
-    //     // }, ()=> {
-    //     //     console.log(this.state.cardColor)
-    //     // })
-    // }
-    // setColor = () => {
-    //     this.setState({
-    //         card:{
-    //             cardColor: this.props.newCard.cardColor
-    //         }
-    //     })
-    // }
+   constructor(){
+       super();
+       this.state = {
+           image: ''
+       }
+   }
     render(){
         return (
             <section className="card" name="card">
-                <Image/>
+                <figure className="userImage">
+                    <img src={this.props.userImage} alt=""/>
+                </figure>
                 <h3>{this.props.addText}</h3>
             </section>
         )
