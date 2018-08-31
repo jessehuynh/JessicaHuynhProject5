@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import halloween from '../src/assets/halloween-pumpkin.png';
+import halloween from '../assets/halloween-pumpkin.png';
 // import cake from '../src/assets/cake-slice.png';
 // import heart from '../src/assets/heart.png';
 // import present from '../src/assets/present.png';
