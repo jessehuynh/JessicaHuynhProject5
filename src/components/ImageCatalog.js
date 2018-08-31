@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-// import halloween from '../src/assets/halloween-pumpkin.png';
-// import cake from '../src/assets/cake-slice.png';
-// import heart from '../src/assets/heart.png';
-// import present from '../src/assets/present.png';
-// import icecream from '../src/assets/soft-serve.png';
-// import sad from '../src/assets/condolences.png';
+import halloween from '../assets/halloween-pumpkin.png';
+import cake from '../assets/cake-slice.png';
+import heart from '../assets/heart.png';
+import present from '../assets/present.png';
+import icecream from '../assets/soft-serve.png';
+import sad from '../assets/condolences.png';
 
 class ImageCatalog extends Component {
+    constructor() {
+        super();
+        this.state = {
+            image: ['../assets/halloween-pumpkin.png', '../assets/cake-slice.png', '../assets/heart.png', '../assets/present.png', '../assets/soft-serve.png', '../assets/condolences.png'],
+        }
+    }
     render(){
         return (
             <section className="catalog">
-                {/* <figure className="imageType">
+                <figure className="imageType">
                     <img src={halloween} alt=""/>
                 </figure>
                 <figure>
@@ -27,7 +33,7 @@ class ImageCatalog extends Component {
                 </figure>
                 <figure>
                     <img src={sad} alt=""/>
-                </figure> */}
+                </figure>
             </section>
         )
     }

@@ -13,12 +13,13 @@ class DesignPalette extends Component {
         }
     }
     addContent = (message, color) => {
-        console.log(color);
+        // console.log(color);
         this.setState({
             message: message,
             cardColor: color,
         }, () => {
-            // console.log(this.state.card);
+            this.props.updateCard(this.state.message, this.state.cardColor)
+            console.log(this.state);
         })
     }
 

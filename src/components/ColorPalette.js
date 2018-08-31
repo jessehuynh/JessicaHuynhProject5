@@ -36,13 +36,6 @@ class ColorPalette extends Component {
         this.props.addContent(this.state.message, this.state.cardColor);
 
     }
-    // handleUpdate = (e) => {
-    //     this.setState({
-    //         cardColor: e.target.value,
-    //     })
-    //     console.log(this.state.cardColor);
-    //     this.props.addColor(this.state.cardColor);
-    // }
     render(){
         return (
             <section className="colours">

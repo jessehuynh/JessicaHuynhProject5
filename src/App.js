@@ -13,45 +13,39 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      card: {
-        cardColor: '#FFFFFF',
-        message: '',
-      },
+      message: '',
+      cardColor: '#FFFFFF',
     }
   }
   componentDidMount(){
     console.log('component mount was called');
     dbRef.on('value', (snapshot) => {
-      this.setState({
-        card: snapshot.val(),
-      })
+      // this.car(snapshot.val());
     });
   }
-  addMessage = (message) => {
-    this.setState({
-      card: {
-        message: message,
-      }
-    }, () => {
-      // console.log(message);
-      // console.log(this.state.message);
-      
-    })
+  saveToFirebase = () => {
+    const savedCard = {
+      message: this.state.message,
+      cardColor: this.state.cardColor,
+    }
+    dbRef.push(savedCard);
+    console.log(savedCard);
   }
-  addColor = (color) => {
+  updateCard = (message, color) => {
     this.setState({
-      card: {
-        cardColor: color,
-      }
+      message: message,
+      cardColor: color,
     }, () => {
-      // console.log(this.props.selectedColour)
+
     })
   }
   render() {
+    console.log(this.state)
     return (
       <main>
-        <Card addMessage={this.addMessage} newCard={this.state.card}/>
-        <DesignPalette addColor={this.addColor} addMessage={this.addMessage}/>
+        <Card addText={this.state.message} />
+        <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard}/>
+        <button onClick={this.saveToFirebase} className="create">Create E-Card</button>
       </main>
     );
   }
