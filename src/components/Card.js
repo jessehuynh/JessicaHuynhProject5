@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Image from './Image';
 // import Message from './Message';
 
 

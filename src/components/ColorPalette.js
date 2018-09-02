@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CustomProperties from 'react-custom-properties';
 
-const colorPicker = document.querySelector('input[type=color]');
+// const colorPicker = document.querySelector('input[type=color]');
 
 class ColorPalette extends Component {
     constructor(){
@@ -9,17 +9,19 @@ class ColorPalette extends Component {
         this.state = {
             message: '',
             cardColor: '#FFFFFF',
-            
+            image:'',
         }
     }
     handleTextChange = (e) => {
         // console.log(e.target.id)
+        this.props.addContent(e.target.value)
         this.setState({
             message: e.target.value,
         
         }, () => {
             // console.log(this.state.card.message)
             // document.documentElement.style.setProperty('--base', this.props.newCard.cardColor)
+            
             // this.props.addColor(this.state.cardColor);
         })
     }

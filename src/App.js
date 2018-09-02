@@ -5,6 +5,7 @@ import './App.css';
 
 import DesignPalette from './components/DesignPalette';
 import Card from './components/Card';
+import CardCollection from './components/CardCollection';
 
 
 const dbRef = firebase.database().ref();
@@ -14,14 +15,9 @@ class App extends Component {
     super();
     this.state = {
       message: '',
-      cardColor: '#FFFFFF',
+      cardColor: '',
+      image:'',
     }
-  }
-  componentDidMount(){
-    console.log('component mount was called');
-    dbRef.on('value', (snapshot) => {
-      // this.car(snapshot.val());
-    });
   }
   saveToFirebase = () => {
     const savedCard = {
@@ -31,12 +27,11 @@ class App extends Component {
     }
     dbRef.push(savedCard);
     console.log(savedCard);
-  }
-  deleteCard = (cardID) => {
-    // delete from firebase
-    console.log(cardID);
-    // const cardDbRef = firebase.database().ref(`/${cardID}`);
-    // cardDbRef.remove();
+    this.setState({
+       card: savedCard,
+    }, () => {
+      // console.log(savedCard);
+    })
   }
   updateCard = (message, color) => {
     this.setState({
@@ -52,12 +47,13 @@ class App extends Component {
     });
   }
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     return (
       <main>
         <Card addText={this.state.message} userImage={this.state.image}/>
         <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard} selectImage={this.selectImage}/>
-        <button onClick={this.saveToFirebase} className="create">Create E-Card</button>
+        <button onClick={this.saveToFirebase} className="create">Save E-Card</button>
+        <CardCollection/>
       </main>
     );
   }

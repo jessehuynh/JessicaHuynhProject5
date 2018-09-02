@@ -7,12 +7,12 @@ import icecream from '../assets/soft-serve.png';
 import sad from '../assets/condolences.png';
 
 class ImageCatalog extends Component {
-    constructor() {
-        super();
-        this.state = {
-            image: ['../assets/halloween-pumpkin.png', '../assets/cake-slice.png', '../assets/heart.png', '../assets/present.png', '../assets/soft-serve.png', '../assets/condolences.png'],
-        }
-    }
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         image: ['../assets/halloween-pumpkin.png', '../assets/cake-slice.png', '../assets/heart.png', '../assets/present.png', '../assets/soft-serve.png', '../assets/condolences.png'],
+    //     }
+    // }
     clickImage = (e) => {
         // console.log(e.target.src);
         this.props.changeImage(e.target.src)

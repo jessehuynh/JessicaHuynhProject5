@@ -149,6 +149,9 @@ main {
   grid-template-rows: 600px;
   margin: 0 auto; }
 
+.savedCards {
+  border: 1px solid red; }
+
 .card {
   border: 1px solid red;
   background: var(--base);
@@ -182,6 +185,7 @@ main {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   display: flex;
+  grid-row: 1;
   flex-flow: row wrap; }
   .catalog figure {
     border: 1px solid orange;

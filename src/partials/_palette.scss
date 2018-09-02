@@ -20,6 +20,7 @@
     grid-template-columns:1fr 1fr;
     grid-template-rows:repeat(2, 1fr);
     display:flex;
+    grid-row:1;
     flex-flow: row wrap;
     figure {
         border:1px solid orange;
