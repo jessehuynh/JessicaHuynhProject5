@@ -8,7 +8,7 @@ class ColorPalette extends Component {
         super();
         this.state = {
             message: '',
-            cardColor: '#FFFFFF',
+            cardColor: 'none',
             image:'',
         }
     }
@@ -47,19 +47,19 @@ class ColorPalette extends Component {
     }
     render(){
         return (
-            <section className="colours">
-             <form onSubmit={this.handleSubmit} action="" className="userInput">
-            <CustomProperties 
-            global
-            properties={{'--base': this.state.cardColor}}/>
-                <button onClick={this.presetColor} className="pink" value="#F0D3D1">#F0D3D1</button>
-                <button onClick={this.presetColor} className="blue" value="#CDD6EE">#CDD6EE</button>
-                <button onClick={this.presetColor} className="beige" value="#DFC39F">#DFC39F</button>
-                <input onChange={this.handleColorChange} type="color" id="cardColor" name="base" maxLength="200" value={this.state.cardColor}/>
-            
-                <label className="visuallyhidden" htmlFor="message"></label>
-                <input onChange={this.handleTextChange} type="text" id="message" placeholder="Insert your message" value={this.state.message}/>
-                <input type="submit" value="Try it!"/>
+            <section className="container container--colors">
+                <form onSubmit={this.handleSubmit} action="" className="container__form">
+                <label className="visuallyhidden form__input" htmlFor="message"></label>
+                <input onChange={this.handleTextChange} className="form__input" type="text" id="message" placeholder="Insert your message" value={this.state.message}/>
+                <input className="visuallyhidden" type="submit" value="Try it!"/>
+                <CustomProperties 
+                global
+                properties={{'--base': this.state.cardColor}}/>
+                <span>Select your colour</span>
+                <button onClick={this.presetColor} className="form__btn form__btn--pink" value="#F0D3D1">Blush</button>
+                <button onClick={this.presetColor} className="form__btn form__btn form__btn--blue" value="#CDD6EE">Cloudy Sky</button>
+                <button onClick={this.presetColor} className="form__btn form__btn--cream" value="#F9F1EC">Milk Tea</button>
+                <input onChange={this.handleColorChange} className="form__btn form__btn--picker" type="color" id="cardColor" name="base" maxLength="200" value={this.state.cardColor}/>
             </form>
             </section>
             

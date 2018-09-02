@@ -6,7 +6,7 @@ import present from '../assets/present.png';
 import icecream from '../assets/soft-serve.png';
 import sad from '../assets/condolences.png';
 
-class ImageCatalog extends Component {
+class ImageCart extends Component {
     // constructor() {
     //     super();
     //     this.state = {
@@ -21,28 +21,31 @@ class ImageCatalog extends Component {
 
     render(){
         return (
-            <section className="catalog">
-                <figure className="imageType">
+            <React.Fragment>
+            <span>Select your image</span>
+            <section className="container container--cart">
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={halloween} alt=""/>
                 </figure>
-                <figure>
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={cake} alt=""/>
                 </figure>
-                <figure>
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={heart} alt=""/>
                 </figure>
-                <figure>
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={present} alt=""/>
                 </figure>
-                <figure>
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={icecream} alt=""/>
                 </figure>
-                <figure>
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={sad} alt=""/>
                 </figure>
             </section>
+            </React.Fragment>
         )
     }
 }
 
-export default ImageCatalog;
+export default ImageCart;

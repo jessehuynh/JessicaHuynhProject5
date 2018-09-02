@@ -12,7 +12,7 @@ class Card extends Component {
    }
     render(){
         return (
-            <section className="card" name="card">
+            <section className="container container--card card" name="card">
                 <figure className="userImage">
                     <img src={this.props.userImage} alt=""/>
                 </figure>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ColorPalette from './ColorPalette';
-import ImageCatalog from './ImageCatalog';
+import ImageCart from './ImageCart';
 
 class DesignPalette extends Component {
     constructor(){
@@ -28,9 +28,9 @@ class DesignPalette extends Component {
 
     render(){
         return (
-            <section className="design">
+            <section className="container container--design">
+                <ImageCart changeImage={this.changeImage}/>
                 <ColorPalette addContent={this.addContent} />
-                <ImageCatalog changeImage={this.changeImage}/>
             </section>
             
         )

@@ -49,12 +49,22 @@ class App extends Component {
   render() {
     console.log(this.state)
     return (
-      <main>
-        <Card addText={this.state.message} userImage={this.state.image}/>
-        <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard} selectImage={this.selectImage}/>
-        <button onClick={this.saveToFirebase} className="create">Save E-Card</button>
-        <CardCollection/>
-      </main>
+      <React.Fragment>
+        <section clasName="container container--xCards">
+          <CardCollection/>
+        </section>
+        <main>
+          <div className="wrapper">
+            <section>
+              <Card addText={this.state.message} userImage={this.state.image}/>
+            </section>
+            <aside>
+              <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard} selectImage={this.selectImage}/>
+              <button onClick={this.saveToFirebase} className="create">Save E-Card</button>
+            </aside>
+          </div>
+        </main>
+      </React.Fragment>
     );
   }
 }

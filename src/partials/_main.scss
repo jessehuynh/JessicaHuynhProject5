@@ -1,11 +1,32 @@
-main {
+
+.wrapper {
     // border:1px solid red;
+    background:lighten($primary, 1.5%);
     display:grid;
-    grid-template-columns:1fr 1fr 500px 1fr;
-    grid-template-rows:600px;
-    margin:0 auto; 
+    grid-template-columns:minmax(min-content, 400px) 500px;
+    grid-template-rows:min-content;
+    grid-gap:20px;
+    margin:0 auto;
+    width:60%;
 }
 
-.savedCards {
-    border:1px solid red;
+aside {
+    grid-column:1;
+    grid-row:1;
+    border:2px solid $light;
+	background:lighten($primary, 1.5%);
+}
+
+.container--card {
+    border:2px solid $light;
+    height:100%;
+    background:var(--base);
+    grid-column:2;
+    grid-row:2;
+    width:100%;
+    text-align: center;
+     h3 {
+        position:relative;
+        bottom:25%;
+    }
 }
