@@ -156,7 +156,14 @@ aside {
   grid-column: 1;
   grid-row: 1;
   border: 2px solid #F7FBFC;
-  background: #e6f0f7; }
+  background: #e6f0f7;
+  padding: 10px; }
+  aside button {
+    border: 1px solid #F7FBFC;
+    background: transparent;
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%; }
 
 .container--card {
   border: 2px solid #F7FBFC;
@@ -170,14 +177,25 @@ aside {
     position: relative;
     bottom: 25%; }
 
+.container--xCards {
+  background: green;
+  width: 50%; }
+
 .userImage {
   position: relative; }
 
-.container--design {
-  padding: 10px; }
-  .container--design .container__form {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr); }
+.container .container__form {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr); }
+  .container .container__form .form__input {
+    border: 1px solid #F7FBFC;
+    background: transparent;
+    text-align: center; }
+  .container .container__form .form__btn:not(.form__btn--picker) {
+    border: 1px solid #F7FBFC;
+    background: transparent;
+    margin: 5px 0;
+    padding: 10px; }
 
 .container--cart {
   display: flex;
@@ -185,27 +203,19 @@ aside {
   .container--cart .container__card {
     width: calc(100% / 3); }
 
-.container--colors {
-  border: 1px solid orange; }
-  .container--colors .container__form .form__input {
-    border: 1px solid #F7FBFC;
-    background: transparent;
-    text-align: center; }
-  .container--colors .container__form .form__btn:not(.form__btn--picker) {
-    border: 1px solid #F7FBFC;
-    background: transparent;
-    margin: 5px 0;
-    padding: 10px; }
-  .container--colors .container__form .form__btn--picker {
-    border: 1px solid #F7FBFC;
-    margin: 5px 0;
-    width: 100%;
-    padding: 0;
-    height: 40px;
-    background: transparent; }
+.container__btn {
+  border: 1px solid #F7FBFC;
+  background: transparent;
+  margin: 5px 0;
+  padding: 10px; }
 
-.container--form {
-  border: 1px solid red; }
+.container--colors .container__form .form__btn--picker {
+  border: 1px solid #F7FBFC;
+  margin: 5px 0;
+  width: 100%;
+  padding: 0;
+  height: 40px;
+  background: transparent; }
 
 :root {
   --base: #EBDCC2; }

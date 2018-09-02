@@ -45,13 +45,13 @@ class CardCollection extends Component {
     render(){
         console.log(this.state.card)
         return (
-            <section className="cardCatalog">
+            <section className="container container--xCards">
                 <h3>Jesse's Card Catalog</h3>
                 {this.state.card.map((card)=>{
                     
                     return (
                         <React.Fragment key={card.key}>
-                        <figure style={{backgroundColor: card.cardColor}} id={card.key}>
+                        <figure className="container__card" style={{backgroundColor: card.cardColor}} id={card.key}>
                             <img src={card.image}/>
                             <h3>{card.message}</h3>
                         </figure>

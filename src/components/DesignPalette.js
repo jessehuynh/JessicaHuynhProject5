@@ -11,15 +11,14 @@ class DesignPalette extends Component {
                 image:'',
         }
     }
-    addContent = (message, color, image) => {
+    addContent = (message, color) => {
         // console.log(color);
         this.setState({
             message: message,
             cardColor: color,
-            image:image,
         }, () => {
             this.props.updateCard(this.state.message, this.state.cardColor)
-            console.log(this.state);
+            // console.log(this.state);
         })
     }
     changeImage = (image) => {

@@ -22,7 +22,7 @@ class ImageCart extends Component {
     render(){
         return (
             <React.Fragment>
-            <span>Select your image</span>
+            <span className="container__text">Select your image</span>
             <section className="container container--cart">
                 <figure className="container__card">
                     <img onClick={this.clickImage} src={halloween} alt=""/>

@@ -37,8 +37,6 @@ class App extends Component {
     this.setState({
       message: message,
       cardColor: color,
-    }, () => {
-
     })
   }
   selectImage = (image) => {
@@ -50,9 +48,7 @@ class App extends Component {
     console.log(this.state)
     return (
       <React.Fragment>
-        <section clasName="container container--xCards">
           <CardCollection/>
-        </section>
         <main>
           <div className="wrapper">
             <section>
@@ -60,7 +56,7 @@ class App extends Component {
             </section>
             <aside>
               <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard} selectImage={this.selectImage}/>
-              <button onClick={this.saveToFirebase} className="create">Save E-Card</button>
+              <button className="container__btn" onClick={this.saveToFirebase} className="create">Save E-Card</button>
             </aside>
           </div>
         </main>

@@ -1,11 +1,22 @@
-
-.container--design {
-    padding:10px;
+.container {
     .container__form {
         display:grid;
         grid-template-rows:repeat(4,1fr);
+        .form__input {
+            border:1px solid $light;
+            background:transparent;
+            text-align: center;
+        }
+        .form__btn:not(.form__btn--picker){
+            border:1px solid $light;
+            background:transparent;
+            margin:5px 0;
+            padding:10px;
+        }
     }
+
 }
+
 .container--cart {
     display:flex;
     flex-flow:row wrap;
@@ -15,21 +26,17 @@
     }
 }
 
-.container--colors {
-    border:1px solid orange;
-    .container__form {
-        // border:1px solid purple;
-        .form__input {
-            border:1px solid $light;
-            background:transparent;
-            text-align: center;
-        }
-        .form__btn:not(.form__btn--picker) {
-            border:1px solid $light;
+.container__btn {
+    border:1px solid $light;
             background:transparent;
             margin:5px 0;
             padding:10px;
-        }
+}
+
+.container--colors {
+    // border:1px solid orange;
+    .container__form {
+        // border:1px solid purple;
         .form__btn--picker {
             border:1px solid $light;
             margin:5px 0;
@@ -39,10 +46,8 @@
             background:transparent;
             
         }
+        
 
     }
 
-}
-.container--form {
-    border:1px solid red;
 }

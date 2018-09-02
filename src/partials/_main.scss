@@ -1,3 +1,6 @@
+main {
+    // background:pink;
+}
 
 .wrapper {
     // border:1px solid red;
@@ -14,7 +17,16 @@ aside {
     grid-column:1;
     grid-row:1;
     border:2px solid $light;
-	background:lighten($primary, 1.5%);
+    background:lighten($primary, 1.5%);
+    padding:10px;
+    button {
+        border:1px solid $light;
+        background:transparent;
+        margin:5px 0;
+        padding:10px;
+        // border:1px solid red;
+        width:100%;
+    }
 }
 
 .container--card {
@@ -29,4 +41,9 @@ aside {
         position:relative;
         bottom:25%;
     }
+}
+
+.container--xCards {
+    background:green;
+    width:50%;
 }
