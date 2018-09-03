@@ -13,10 +13,10 @@ class Card extends Component {
     render(){
         return (
             <section className="container container--card card" name="card">
-                <figure className="userImage">
+                <figure style={{backgroundColor: '--base'}}className="container__card">
                     <img src={this.props.userImage} alt=""/>
                 </figure>
-                <h3>{this.props.addText}</h3>
+                <h4 className="card__text">{this.props.addText}</h4>
             </section>
         )
     }

@@ -143,13 +143,20 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0);
   overflow: hidden; }
 
-.wrapper {
-  background: #e6f0f7;
-  display: grid;
-  grid-template-columns: minmax(min-content, 400px) 500px;
-  grid-template-rows: min-content;
-  grid-gap: 20px;
+html {
+  font-size: 62.5%; }
+
+main {
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%; }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(min-content, 300px) 500px;
+  grid-template-rows: 600px;
+  grid-gap: 20px;
   width: 60%; }
 
 aside {
@@ -178,11 +185,28 @@ aside {
     bottom: 25%; }
 
 .container--xCards {
-  background: green;
-  width: 50%; }
+  display: none;
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-flow: row wrap; }
 
-.userImage {
+.container--collection {
+  display: flex;
+  flex-flow: row wrap; }
+  .container--collection .container__card {
+    width: calc(100% /4); }
+
+.container--card {
   position: relative; }
+  .container--card h4 {
+    margin: 0;
+    position: absolute;
+    top: 68%;
+    right: 2%;
+    bottom: 0;
+    left: 2%;
+    overflow: hidden; }
 
 .container .container__form {
   display: grid;
@@ -223,8 +247,16 @@ aside {
 body {
   background: #E0ECF5;
   height: 100vh;
-  align-items: center; }
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 200; }
 
 img {
   width: 100%;
   display: block; }
+
+h4 {
+  font-family: "Amatic SC", cursive;
+  font-size: 4rem; }

@@ -38,30 +38,32 @@ class CardCollection extends Component {
     }
     deleteCard = (cardID) => {
         const cardRef = firebase.database().ref(`/${cardID}`)
-        if (cardID != '-LLM_x68QlfqPSU_4AIz'){
+        const confirm = window.confirm('WARNING: This will permanently remove this card. Do you want to continue?');
+        if (confirm === true && cardID != '-LLV74ld-b4FiP9lZ_Xy') {
             cardRef.remove();
         }
+        
     }
     render(){
         console.log(this.state.card)
         return (
-            <section className="container container--xCards">
+            <section className="container">
                 <h3>Jesse's Card Catalog</h3>
                 {this.state.card.map((card)=>{
                     
                     return (
-                        <React.Fragment key={card.key}>
+                        <section className="container container--collection" key={card.key}>
                         <figure className="container__card" style={{backgroundColor: card.cardColor}} id={card.key}>
                             <img src={card.image}/>
                             <h3>{card.message}</h3>
-                        </figure>
-                        <button onClick={
+                        <button className="btn--delete" onClick={
                             () => {this.deleteCard(card.key) 
                             }} id={card.key}>
-                            delete
+                            <i class="far fa-trash-alt"></i>
                         </button>
+                        </figure>
 
-                        </React.Fragment>
+                        </section>
                     )
                 })}
             </section>

@@ -1,6 +1,13 @@
-
-
-.userImage {
+.container--card {
     position: relative;
+    h4 {
+    // border:1px solid red;
+    margin:0;
+    position: absolute;
+    top:68%;
+    right:2%;
+    bottom:0;
+    left:2%;
+    overflow:hidden;
+    }
 }
-

@@ -11,25 +11,39 @@ class DesignPalette extends Component {
                 image:'',
         }
     }
-    addContent = (message, color) => {
-        // console.log(color);
+    // addContent = (message, color) => {
+    //     // console.log(color);
+    //     this.setState({
+    //         message: message,
+    //         cardColor: color,
+    //     }, () => {
+    //         this.props.updateCard(this.state.message, this.state.cardColor)
+    //         // console.log(this.state);
+    //     })
+    // }
+
+    addText = (message) => {
         this.setState({
-            message: message,
-            cardColor: color,
+            message:message,
         }, () => {
-            this.props.updateCard(this.state.message, this.state.cardColor)
-            // console.log(this.state);
+            this.props.updateText(this.state.message)
+        })
+    }
+    addColor = (color) => {
+        this.setState({
+            cardColor:color,
+        }, () => {
+            this.props.updateColor(this.state.cardColor)
         })
     }
     changeImage = (image) => {
         this.props.selectImage(image)
     }
-
     render(){
         return (
             <section className="container container--design">
                 <ImageCart changeImage={this.changeImage}/>
-                <ColorPalette addContent={this.addContent} />
+                <ColorPalette addText={this.addText} addColor={this.addColor} />
             </section>
             
         )

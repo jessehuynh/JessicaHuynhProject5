@@ -33,12 +33,23 @@ class App extends Component {
       // console.log(savedCard);
     })
   }
-  updateCard = (message, color) => {
+  updateText = (message) => {
     this.setState({
-      message: message,
-      cardColor: color,
+      message:message,
     })
   }
+  updateColor = (color) => {
+    this.setState({
+      cardColor:color
+    })
+  }
+
+  // updateCard = (message, color) => {
+  //   this.setState({
+  //     message: message,
+  //     cardColor: color,
+  //   })
+  // }
   selectImage = (image) => {
     this.setState({
       image: image
@@ -48,14 +59,16 @@ class App extends Component {
     console.log(this.state)
     return (
       <React.Fragment>
-          <CardCollection/>
         <main>
+          <section className="container container--xCards">
+          <CardCollection/>
+          </section>
           <div className="wrapper">
-            <section>
+            <section className="container">
               <Card addText={this.state.message} userImage={this.state.image}/>
             </section>
             <aside>
-              <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateCard={this.updateCard} selectImage={this.selectImage}/>
+              <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateText={this.updateText} updateColor={this.updateColor} selectImage={this.selectImage}/>
               <button className="container__btn" onClick={this.saveToFirebase} className="create">Save E-Card</button>
             </aside>
           </div>
