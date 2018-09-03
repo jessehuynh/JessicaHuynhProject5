@@ -39,11 +39,12 @@ class CardCollection extends Component {
             // console.log(cardListArray)
         })
     }
-    saveImage = () => {
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            const download = (document.querySelector('.saved').appendChild(canvas)).toDataURL("image/png");
-        });
-    }
+    // saveImage = () => {
+    //     html2canvas(document.querySelector("#capture")).then(canvas => {
+    //         const download = (document.querySelector('.saved').appendChild(canvas)).toDataURL("image/png");
+    //         console.log(canvas)
+    //     });
+    // }
     deleteCard = (cardID) => {
         const cardRef = firebase.database().ref(`/${cardID}`)
         const confirm = window.confirm('WARNING: This will permanently remove this card. Do you want to continue?');
@@ -60,7 +61,7 @@ class CardCollection extends Component {
                 
                 {this.state.card.map((card)=>{
                     return (
-                        <section className="container container--collection" id="capture" key={card.key}>
+                        <section className="container container--collection" id="capture">
                             <figure className="container__card" style={{backgroundColor: card.cardColor}} id={card.key}>
                                 <img id="mirror" class="canvas__mirror"  src={card.image}/>
                                 <h5 className="container__text">{card.message}</h5>
@@ -71,7 +72,7 @@ class CardCollection extends Component {
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                             </figure>
-                            <div className="saved"></div>
+                            {/* <div className="saved"></div> */}
                         </section>
                     )
                 })}

@@ -24,14 +24,15 @@
     .container__card {
         width:calc(100% / 3);
         // background:$white;
+      
     }
 }
 
 .container__btn {
     border:1px solid $light;
-            background:transparent;
-            margin:5px 0;
-            padding:10px;
+    background:transparent;
+    margin:5px 0;
+    padding:10px;
 }
 
 .container--colors {

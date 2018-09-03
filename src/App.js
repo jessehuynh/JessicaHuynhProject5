@@ -62,7 +62,7 @@ class App extends Component {
             </section>
             <aside>
               <DesignPalette addColor={this.addColor} addMessage={this.addMessage} updateText={this.updateText} updateColor={this.updateColor} selectImage={this.selectImage}/>
-              <button className="container__btn" onClick={this.saveToFirebase} className="create">Save E-Card</button>
+              <button className="container__btn" onClick={this.saveToFirebase} className="create">Save</button>
             </aside>
           </div>
         </main>

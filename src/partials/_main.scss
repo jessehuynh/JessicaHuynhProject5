@@ -1,27 +1,35 @@
 main {
     margin:0 auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-gap:20px;
-    // grid-template-rows:1fr;
-    height:100%;
+    display:flex;
+    flex-flow:row-reverse wrap;
+    justify-content: space-between;
+    @include breakPoint(firstBreak) {
+        flex-flow:column wrap;
+    }
 }
 
-.wrapper {
+main .wrapper {
     // border:1px solid red;
-    display:grid;
-    grid-template-columns:minmax(min-content, 300px) 500px;
-    grid-template-rows:600px;
-    grid-gap:20px;
+    display:flex;
+    flex-direction:row;
     width:60%;
+    margin:0 auto;
+    padding:0;
+    justify-content: space-between;
+    // max-height:600px;
+    @include breakPoint(firstBreak) {
+        width:80%;
+    }
 }
 
 aside {
-    grid-column:1;
-    grid-row:1;
-    border:2px solid $light;
+    // border:2px solid blue;
     background:lighten($background, 1.5%);
     padding:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width:40%;
     button {
         border:1px solid $light;
         background:transparent;
@@ -33,7 +41,7 @@ aside {
 }
 
 .container--card {
-    border:2px solid $light;
+    // border:2px solid purple;
     height:100%;
     background:var(--base);
     grid-column:2;
@@ -47,13 +55,20 @@ aside {
 }
 
 .container--xCards {
-    border:2px solid $light;
-    // width:50%;
+    // border:1px solid $light;
+    background:lighten($background, 1.5%);
+    width:36%;
     display:none;
     grid-row:1;
     grid-column:2;
     display:flex;
     flex-flow: row wrap;
+    margin:0 auto;
+    padding:0;
+    max-height:600px;
+    @include breakPoint(firstBreak) {
+        width:80%;
+    }
 }
 
 .container__catalog {
@@ -63,17 +78,23 @@ aside {
     align-items:center;
     align-content: flex-start;
     // border:1px solid green;
+    width:100%;
+    overflow-y:scroll;
+    max-height:600px;
 }
 
 .container--collection {
     border:1px solid $light;
-    flex:0 1 calc(100% / 5);
+    flex:0 1 calc(100% / 3);
     display:flex;
     flex-flow:row wrap;
+    @include breakPoint(firstBreak) {
+        flex:0 1 calc(100% / 6);
+    }
     .container__card {
-        width:100%;
         position: relative;
         text-align: center;
+        // width:50%;
         &:hover {
             .btn--delete, .button {
                 font-size:2rem;
@@ -91,13 +112,16 @@ aside {
 
         }
         .container__text {
-            font-size:1.2rem;
+            // border:1px solid red;
+            font-size:1.5rem;
             position:absolute;
-            top:60%;
+            top:55%;
             right:2%;
-            bottom:0;
+            bottom:-20%;
             left:2%;
             overflow:hidden;
+            text-transform: uppercase;
+            font-family:$cardFont;
         }
         .btn--delete, .button {
             display:none;
@@ -106,15 +130,7 @@ aside {
 
 }
 
-.canvas {
-    position: absolute;
-    border:1px solid red;
-}
-
 .button {
     z-index:10;
 }
 
-.hahaha {
-    display:none;
-}

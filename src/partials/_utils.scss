@@ -13,3 +13,28 @@ $baseFont: 'Work Sans', sans-serif;
         fill:transparent;
     }
 }
+
+
+@mixin breakPoint($point) {
+    @if $point == firstBreak {
+        @media (max-width:875px) { @content;}
+    }
+    @if $point == secondBreak {
+        @media (max-width:1080px) { @content;}
+    }
+    @if $point == thirdBreak {
+        @media (max-width:940px) { @content;}
+    }
+    @if $point == fourthBreak {
+        @media (max-width:840px) {@content;}
+    }
+    @if $point == fifthBreak {
+        @media (max-width:775px) {@content;}
+    }
+    @if $point == sixthBreak {
+        @media (max-width:675px) {@content;}
+    }
+    @if $point == seventhBreak {
+        @media (max-width:450px) {@content;}
+    }
+}

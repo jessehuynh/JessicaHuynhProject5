@@ -51,7 +51,6 @@ class ColorPalette extends Component {
                     <CustomProperties 
                     global
                     properties={{'--base': this.state.cardColor}}/>
-                    <span className="container__text">Select your colour</span>
                     <button style={{backgroundColor: '#F0D3D1'}} onClick={this.presetColor} className="form__btn form__btn--pink" value="#F0D3D1">Blush</button>
                     <button style={{ backgroundColor: '#CDD6EE' }}onClick={this.presetColor} className="form__btn form__btn form__btn--blue" value="#CDD6EE">Cloudy Sky</button>
                     <button style={{ backgroundColor: '#F9F1EC' }}onClick={this.presetColor} className="form__btn form__btn--cream" value="#F9F1EC">Milk Tea</button>

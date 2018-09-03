@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import halloween from '../assets/halloween-pumpkin.png';
 import cake from '../assets/cake-slice.png';
 import heart from '../assets/heart.png';
-import present from '../assets/present.png';
+import star from '../assets/star.png';
 import icecream from '../assets/soft-serve.png';
 import sad from '../assets/condolences.png';
 
@@ -16,8 +16,6 @@ class ImageCart extends Component {
 
     render(){
         return (
-            <React.Fragment>
-            <span className="container__text">Select your image</span>
             <section className="container container--cart">
                 <figure className="container__card">
                     <img onClick={this.clickImage} src={halloween} alt=""/>
@@ -29,7 +27,7 @@ class ImageCart extends Component {
                     <img onClick={this.clickImage} src={heart} alt=""/>
                 </figure>
                 <figure className="container__card">
-                    <img onClick={this.clickImage} src={present} alt=""/>
+                    <img onClick={this.clickImage} src={star} alt=""/>
                 </figure>
                 <figure className="container__card">
                     <img onClick={this.clickImage} src={icecream} alt=""/>
@@ -38,7 +36,6 @@ class ImageCart extends Component {
                     <img onClick={this.clickImage} src={sad} alt=""/>
                 </figure>
             </section>
-            </React.Fragment>
         )
     }
 }
