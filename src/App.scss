@@ -10,7 +10,7 @@
 }
 
 body {
-	background:$primary;
+	background:$background;
 	height:100vh;
 	display:flex;
 	align-items:center;
@@ -27,4 +27,67 @@ img {
 h4 {
 	font-family:$cardFont;
 	font-size:4rem;
+}
+
+.overlay {
+	// border:1px solid red;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:10;
+	.wrapper {
+		display:flex;
+		width:50%;
+		// border:1px solid green;
+		svg {
+			fill:none;
+		}
+	}
+	.G, .E, .T, .C, .R, .E2, .A, .T2, .I, .V, .E3 {
+		animation:slowfill 8s forwards infinite;
+	}
+
+}
+
+#G, #E, #T, #C, #R, #E2, #A, #T2, #I, #V, #E3 {
+	animation:slowfill 8s forwards infinite;
+}
+
+#E {
+    animation-delay:0.5s;
+}
+
+#T {
+    animation-delay: 1s;
+}
+
+#C {
+    animation-delay: 1.5s;
+}
+#R {
+    animation-delay: 2s;
+}
+#E2 {
+    animation-delay: 2.5s;
+}
+#A {
+    animation-delay: 3s;
+}
+#T2 {
+    animation-delay: 3.5s;
+}
+#I {
+    animation-delay: 4s;
+}
+#V {
+	animation-delay: 4.5s;
+}
+#E3 {
+	animation-delay: 5s;
+
 }

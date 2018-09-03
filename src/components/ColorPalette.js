@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import CustomProperties from 'react-custom-properties';
 
-// const colorPicker = document.querySelector('input[type=color]');
 
 class ColorPalette extends Component {
     constructor(){
         super();
         this.state = {
             message: '',
-            cardColor: 'none',
+            cardColor: '#f0f7fc',
             image:'',
         }
     }

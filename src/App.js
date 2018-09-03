@@ -43,13 +43,6 @@ class App extends Component {
       cardColor:color
     })
   }
-
-  // updateCard = (message, color) => {
-  //   this.setState({
-  //     message: message,
-  //     cardColor: color,
-  //   })
-  // }
   selectImage = (image) => {
     this.setState({
       image: image
