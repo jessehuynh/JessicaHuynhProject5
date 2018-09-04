@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+
+// images
 import halloween from '../assets/halloween-pumpkin.png';
 import cake from '../assets/cake-slice.png';
 import heart from '../assets/heart.png';
 import star from '../assets/star.png';
 import icecream from '../assets/soft-serve.png';
-import sad from '../assets/condolences.png';
+import witch from '../assets/witch-hat.png';
 
 
 class ImageCart extends Component {
@@ -21,6 +23,9 @@ class ImageCart extends Component {
                     <img onClick={this.clickImage} src={halloween} alt=""/>
                 </figure>
                 <figure className="container__card">
+                    <img onClick={this.clickImage} src={witch} alt=""/>
+                </figure>
+                <figure className="container__card">
                     <img onClick={this.clickImage} src={cake} alt=""/>
                 </figure>
                 <figure className="container__card">
@@ -31,9 +36,6 @@ class ImageCart extends Component {
                 </figure>
                 <figure className="container__card">
                     <img onClick={this.clickImage} src={icecream} alt=""/>
-                </figure>
-                <figure className="container__card">
-                    <img onClick={this.clickImage} src={sad} alt=""/>
                 </figure>
             </section>
         )

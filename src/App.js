@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase from './firebase';
 import './App.css';
 
-
+import Header from './components/Header';
 import DesignPalette from './components/DesignPalette';
 import Card from './components/Card';
 import CardCollection from './components/CardCollection';
@@ -52,6 +52,7 @@ class App extends Component {
     console.log(this.state)
     return (
       <React.Fragment>
+        <Header/>
         <main>
           <section className="container container--xCards">
           <CardCollection/>

@@ -1,24 +1,37 @@
 main {
+    // border:1px solid red;
     margin:0 auto;
     display:flex;
     flex-flow:row-reverse wrap;
     justify-content: space-between;
+    align-content: center;
+    // width:100%;
     @include breakPoint(firstBreak) {
-        flex-flow:column wrap;
+        flex-flow:column-reverse;
+        height:100%;
+    }
+    @include breakPoint(thirdBreak) {
+        height:auto;
     }
 }
 
 main .wrapper {
     // border:1px solid red;
     display:flex;
-    flex-direction:row;
+    flex-flow:row;
     width:60%;
     margin:0 auto;
     padding:0;
     justify-content: space-between;
-    // max-height:600px;
+    height:650px;
     @include breakPoint(firstBreak) {
-        width:80%;
+        width:90%;
+        margin:1% auto;
+        justify-content: space-around;
+    }
+    @include breakPoint(thirdBreak) {
+        flex-direction:column;
+        height:auto;
     }
 }
 
@@ -38,6 +51,10 @@ aside {
         // border:1px solid red;
         width:100%;
     }
+     @include breakPoint(thirdBreak) {
+        // flex-direction:row;
+        width:100%;
+    }
 }
 
 .container--card {
@@ -55,41 +72,44 @@ aside {
 }
 
 .container--xCards {
-    // border:1px solid $light;
+    // border:1px solid blue;
     background:lighten($background, 1.5%);
-    width:36%;
-    display:none;
+    width:calc(40% - 20px);
     grid-row:1;
     grid-column:2;
     display:flex;
     flex-flow: row wrap;
-    margin:0 auto;
+    margin:0 auto 0 20px;
     padding:0;
-    max-height:600px;
     @include breakPoint(firstBreak) {
-        width:80%;
+        width:90%;
+        margin-left:0;
+        margin:0 auto;
     }
 }
 
 .container__catalog {
+    // border:1px solid green;
     display:flex;
-    // grid-template-columns:1fr;
     flex-flow:row wrap;
     align-items:center;
     align-content: flex-start;
-    // border:1px solid green;
     width:100%;
     overflow-y:scroll;
-    max-height:600px;
+    height:auto;
+    @include breakPoint(secondBreak) {
+        height:auto;
+        // border:1px solid red;
+    }
 }
 
 .container--collection {
     border:1px solid $light;
-    flex:0 1 calc(100% / 3);
+    flex:0 1 calc(100% / 2);
     display:flex;
     flex-flow:row wrap;
     @include breakPoint(firstBreak) {
-        flex:0 1 calc(100% / 6);
+        flex:0 1 calc(100% / 3);
     }
     .container__card {
         position: relative;
@@ -113,12 +133,12 @@ aside {
         }
         .container__text {
             // border:1px solid red;
-            font-size:1.5rem;
+            font-size:2.5rem;
             position:absolute;
-            top:55%;
-            right:2%;
+            top:60%;
+            right:3%;
             bottom:-20%;
-            left:2%;
+            left:3%;
             overflow:hidden;
             text-transform: uppercase;
             font-family:$cardFont;

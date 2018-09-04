@@ -156,21 +156,33 @@ main {
   margin: 0 auto;
   display: flex;
   flex-flow: row-reverse wrap;
-  justify-content: space-between; }
-  @media (max-width: 875px) {
+  justify-content: space-between;
+  align-content: center; }
+  @media (max-width: 1150px) {
     main {
-      flex-flow: column wrap; } }
+      flex-flow: column-reverse;
+      height: 100%; } }
+  @media (max-width: 575px) {
+    main {
+      height: auto; } }
 
 main .wrapper {
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
   width: 60%;
   margin: 0 auto;
   padding: 0;
-  justify-content: space-between; }
-  @media (max-width: 875px) {
+  justify-content: space-between;
+  height: 650px; }
+  @media (max-width: 1150px) {
     main .wrapper {
-      width: 80%; } }
+      width: 90%;
+      margin: 1% auto;
+      justify-content: space-around; } }
+  @media (max-width: 575px) {
+    main .wrapper {
+      flex-direction: column;
+      height: auto; } }
 
 aside {
   background: #e6f0f7;
@@ -185,6 +197,9 @@ aside {
     margin: 5px 0;
     padding: 10px;
     width: 100%; }
+  @media (max-width: 575px) {
+    aside {
+      width: 100%; } }
 
 .container--card {
   height: 100%;
@@ -199,18 +214,18 @@ aside {
 
 .container--xCards {
   background: #e6f0f7;
-  width: 36%;
-  display: none;
+  width: calc(40% - 20px);
   grid-row: 1;
   grid-column: 2;
   display: flex;
   flex-flow: row wrap;
-  margin: 0 auto;
-  padding: 0;
-  max-height: 600px; }
-  @media (max-width: 875px) {
+  margin: 0 auto 0 20px;
+  padding: 0; }
+  @media (max-width: 1150px) {
     .container--xCards {
-      width: 80%; } }
+      width: 90%;
+      margin-left: 0;
+      margin: 0 auto; } }
 
 .container__catalog {
   display: flex;
@@ -219,16 +234,19 @@ aside {
   align-content: flex-start;
   width: 100%;
   overflow-y: scroll;
-  max-height: 600px; }
+  height: auto; }
+  @media (max-width: 700px) {
+    .container__catalog {
+      height: auto; } }
 
 .container--collection {
   border: 1px solid #F7FBFC;
-  flex: 0 1 calc(100% / 3);
+  flex: 0 1 calc(100% / 2);
   display: flex;
   flex-flow: row wrap; }
-  @media (max-width: 875px) {
+  @media (max-width: 1150px) {
     .container--collection {
-      flex: 0 1 calc(100% / 6); } }
+      flex: 0 1 calc(100% / 3); } }
   .container--collection .container__card {
     position: relative;
     text-align: center; }
@@ -244,12 +262,12 @@ aside {
     .container--collection .container__card:hover .button {
       right: 30px; }
     .container--collection .container__card .container__text {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       position: absolute;
-      top: 55%;
-      right: 2%;
+      top: 60%;
+      right: 3%;
       bottom: -20%;
-      left: 2%;
+      left: 3%;
       overflow: hidden;
       text-transform: uppercase;
       font-family: "Amatic SC", cursive; }
@@ -292,9 +310,21 @@ aside {
 
 .container--cart {
   display: flex;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  justify-content: space-around; }
+  @media (max-width: 700px) {
+    .container--cart {
+      justify-content: space-around;
+      margin: 0 auto;
+      width: 85%; } }
   .container--cart .container__card {
     width: calc(100% / 3); }
+    @media (max-width: 700px) {
+      .container--cart .container__card {
+        width: calc(100% / 2); } }
+    @media (max-width: 575px) {
+      .container--cart .container__card {
+        width: calc(100% / 3); } }
 
 .container__btn {
   border: 1px solid #F7FBFC;
@@ -315,16 +345,18 @@ aside {
 
 body {
   background: #E0ECF5;
-  height: 100vh;
-  display: flex;
-  align-items: center;
   font-size: 1.6rem;
   font-family: "Work Sans", sans-serif;
-  font-weight: 200; }
+  font-weight: 100;
+  height: 100%; }
 
 img {
   width: 100%;
   display: block; }
+
+h2 {
+  text-align: center;
+  font-size: 4rem; }
 
 h4 {
   font-family: "Amatic SC", cursive;

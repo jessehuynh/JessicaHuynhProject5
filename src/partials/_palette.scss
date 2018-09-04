@@ -21,9 +21,23 @@
 .container--cart {
     display:flex;
     flex-flow:row wrap;
+    justify-content: space-around;
+    @include breakPoint(secondBreak){
+        justify-content: space-around;
+        // border:1px solid purple;
+        margin:0 auto;
+        width:85%;
+    }
     .container__card {
         width:calc(100% / 3);
         // background:$white;
+        @include breakPoint(secondBreak) {
+            width:calc(100% / 2);
+            // width:80%;
+        }
+        @include breakPoint(thirdBreak) {
+            width:calc(100% / 3);
+        }
       
     }
 }
