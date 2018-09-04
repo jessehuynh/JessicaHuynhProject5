@@ -20,13 +20,16 @@ class App extends Component {
     }
   }
   saveToFirebase = () => {
+    console.log(this.state.message)
     const savedCard = {
       message: this.state.message,
       cardColor: this.state.cardColor,
       image: this.state.image
     }
-    dbRef.push(savedCard);
-    console.log(savedCard);
+    if(this.state.image != '' && this.state.message != '' && this.state.cardColor != '') {
+      dbRef.push(savedCard);
+    }
+    // console.log(savedCard);
     this.setState({
        card: savedCard,
     }, () => {
@@ -49,7 +52,7 @@ class App extends Component {
     });
   }
   render() {
-    console.log(this.state)
+    console.log(this.state.message)
     return (
       <React.Fragment>
         <Header/>

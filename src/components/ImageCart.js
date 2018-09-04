@@ -7,7 +7,7 @@ import ghost from '../assets/ghost.png';
 import star from '../assets/star.png';
 import icecream from '../assets/soft-serve.png';
 import witch from '../assets/witch-hat.png';
-// import cat from '../assets/cat.png';
+import cat from '../assets/cat.png';
 
 
 class ImageCart extends Component {
@@ -41,9 +41,9 @@ class ImageCart extends Component {
                 <figure className="container__card">
                     <img onClick={this.clickImage} src={icecream} alt=""/>
                 </figure>
-                {/* <figure className="container__card">
+                <figure className="container__card cat">
                     <img onClick={this.clickImage} src={cat} alt="" />
-                </figure> */}
+                </figure>
             </section>
             </React.Fragment>
         )

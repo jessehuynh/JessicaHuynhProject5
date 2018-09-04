@@ -364,6 +364,9 @@ aside {
   height: 40px;
   background: transparent; }
 
+.cat {
+  display: none; }
+
 :root {
   --base: #EBDCC2; }
 
