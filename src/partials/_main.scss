@@ -23,7 +23,7 @@ main .wrapper {
     margin:0 auto;
     padding:0;
     justify-content: space-between;
-    height:auto;
+    height:665px;
     @include breakPoint(firstBreak) {
         width:90%;
         margin:1% auto;
@@ -31,6 +31,7 @@ main .wrapper {
     }
     @include breakPoint(thirdBreak) {
         flex-direction:column;
+        height:auto;
     }
 }
 
@@ -40,7 +41,6 @@ aside {
     padding:10px;
     display:flex;
     flex-direction:column;
-    justify-content: center;
     width:40%;
     button {
         border:1px solid $light;
@@ -94,7 +94,7 @@ aside {
     align-items: flex-start;
     width:100%;
     overflow-y:scroll;
-    height:auto;
+    height:665px;
     @include breakPoint(secondBreak) {
         height:auto;
         // border:1px solid red;
@@ -120,13 +120,16 @@ aside {
         &:hover {
             .btn--delete, .button {
                 font-size:2rem;
-                color:black;
+                color:$primary;
                 position: absolute;
                 display:block;
                 top:5px;
                 right:0;
                 background:none;
                 border:none;
+                &:hover {
+                    color:$white;
+                }
             }
             .button {
                 right:30px;
@@ -156,8 +159,4 @@ aside {
         }
     }
 
-}
-
-.button {
-    z-index:10;
 }

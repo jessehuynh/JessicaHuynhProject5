@@ -182,7 +182,7 @@ main .wrapper {
   margin: 0 auto;
   padding: 0;
   justify-content: space-between;
-  height: auto; }
+  height: 665px; }
   @media (max-width: 1150px) {
     main .wrapper {
       width: 90%;
@@ -190,14 +190,14 @@ main .wrapper {
       justify-content: space-around; } }
   @media (max-width: 550px) {
     main .wrapper {
-      flex-direction: column; } }
+      flex-direction: column;
+      height: auto; } }
 
 aside {
   background: #ddeaf3;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 40%; }
   aside button {
     border: 1px solid #F7FBFC;
@@ -241,7 +241,7 @@ aside {
   align-items: flex-start;
   width: 100%;
   overflow-y: scroll;
-  height: auto; }
+  height: 665px; }
   @media (max-width: 780px) {
     .container__catalog {
       height: auto; } }
@@ -263,13 +263,15 @@ aside {
     text-align: center; }
     .container--collection .container__card:hover .btn--delete, .container--collection .container__card:hover .button {
       font-size: 2rem;
-      color: black;
+      color: #8E8E8E;
       position: absolute;
       display: block;
       top: 5px;
       right: 0;
       background: none;
       border: none; }
+      .container--collection .container__card:hover .btn--delete:hover, .container--collection .container__card:hover .button:hover {
+        color: white; }
     .container--collection .container__card:hover .button {
       right: 30px; }
     .container--collection .container__card .container__text {
@@ -290,9 +292,6 @@ aside {
           font-size: 2rem; } }
     .container--collection .container__card .btn--delete, .container--collection .container__card .button {
       display: none; }
-
-.button {
-  z-index: 10; }
 
 .container--card {
   position: relative;

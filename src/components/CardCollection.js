@@ -48,7 +48,7 @@ class CardCollection extends Component {
     deleteCard = (cardID) => {
         const cardRef = firebase.database().ref(`/${cardID}`)
         const confirm = window.confirm('WARNING: This will permanently remove this card. Do you want to continue?');
-        if (confirm === true && cardID != '-LLXksvIQDnmdxpsdF5Q' && cardID != '-LLXl-KWYPfCXbuy24bK') {
+        if (confirm === true && cardID != '-LLXrVVjUTa2TUmkMNih' && cardID != '-LLXr850SYUSHCzZtQJS') {
             cardRef.remove();
         }
     }
