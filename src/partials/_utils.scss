@@ -1,9 +1,11 @@
-$background:#E0ECF5;
+// $background:#E0ECF5;
+$background:#E8F1F7;
 $primary:#8E8E8E;
 $light:#F7FBFC;
 $white:white;
 $cardFont: 'Amatic SC', cursive;
 $baseFont: 'Work Sans', sans-serif;
+$headingFont:  'Oswald', sans-serif;
 
 @keyframes slowfill {
     0% {
@@ -20,21 +22,13 @@ $baseFont: 'Work Sans', sans-serif;
         @media (max-width:1150px) { @content;}
     }
     @if $point == secondBreak {
-        @media (max-width:700px) { @content;}
+        @media (max-width:780px) { @content;}
     }
     @if $point == thirdBreak {
-        @media (max-width:575px) { @content;}
+        @media (max-width:550px) { @content;}
     }
     @if $point == fourthBreak {
-        @media (max-width:840px) {@content;}
-    }
-    @if $point == fifthBreak {
-        @media (max-width:775px) {@content;}
-    }
-    @if $point == sixthBreak {
-        @media (max-width:675px) {@content;}
-    }
-    @if $point == seventhBreak {
         @media (max-width:450px) {@content;}
     }
+  
 }

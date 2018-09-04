@@ -1,0 +1,9 @@
+header {
+	text-align: center;
+	color:$primary;
+	font-family:$headingFont;
+	text-transform: uppercase;
+    letter-spacing: 2px;
+    background:darken($background, 10%);
+    border-bottom:2px dotted $light;
+}

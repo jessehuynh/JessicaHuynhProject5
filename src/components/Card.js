@@ -12,6 +12,7 @@ class Card extends Component {
    }
     render(){
         return (
+            // CARD SECTION
             <section className="container container--card card" name="card">
                 <figure style={{backgroundColor: '--base'}}className="container__card">
                     <img src={this.props.userImage} alt=""/>

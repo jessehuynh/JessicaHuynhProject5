@@ -7,7 +7,7 @@ class ColorPalette extends Component {
         super();
         this.state = {
             message: '',
-            cardColor: '#f0f7fc',
+            cardColor: '#DDEAF3',
             image:'',
         }
     }
@@ -43,6 +43,7 @@ class ColorPalette extends Component {
     }
     render(){
         return (
+            // COLOUR PALETTE AND FORM 
             <section className="container container--colors">
                 <form onSubmit={this.handleSubmit} action="" className="container__form">
                     <label className="visuallyhidden form__input" htmlFor="message"></label>
@@ -54,6 +55,7 @@ class ColorPalette extends Component {
                     <button style={{backgroundColor: '#F0D3D1'}} onClick={this.presetColor} className="form__btn form__btn--pink" value="#F0D3D1">Blush</button>
                     <button style={{ backgroundColor: '#CDD6EE' }}onClick={this.presetColor} className="form__btn form__btn form__btn--blue" value="#CDD6EE">Cloudy Sky</button>
                     <button style={{ backgroundColor: '#F9F1EC' }}onClick={this.presetColor} className="form__btn form__btn--cream" value="#F9F1EC">Milk Tea</button>
+                    <label htmlFor="cardColor">Choose your own colour:</label>
                     <input onChange={this.handleColorChange} className="form__btn form__btn--picker" type="color" id="cardColor" name="base" maxLength="200" value={this.state.cardColor}/>
                 </form>
             </section>

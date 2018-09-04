@@ -23,7 +23,7 @@ main .wrapper {
     margin:0 auto;
     padding:0;
     justify-content: space-between;
-    height:650px;
+    height:auto;
     @include breakPoint(firstBreak) {
         width:90%;
         margin:1% auto;
@@ -31,13 +31,12 @@ main .wrapper {
     }
     @include breakPoint(thirdBreak) {
         flex-direction:column;
-        height:auto;
     }
 }
 
 aside {
     // border:2px solid blue;
-    background:lighten($background, 1.5%);
+    background:darken($background, 3%);
     padding:10px;
     display:flex;
     flex-direction:column;
@@ -73,7 +72,7 @@ aside {
 
 .container--xCards {
     // border:1px solid blue;
-    background:lighten($background, 1.5%);
+    background:darken($background, 3%);
     width:calc(40% - 20px);
     grid-row:1;
     grid-column:2;
@@ -92,8 +91,7 @@ aside {
     // border:1px solid green;
     display:flex;
     flex-flow:row wrap;
-    align-items:center;
-    align-content: flex-start;
+    align-items: flex-start;
     width:100%;
     overflow-y:scroll;
     height:auto;
@@ -108,8 +106,12 @@ aside {
     flex:0 1 calc(100% / 2);
     display:flex;
     flex-flow:row wrap;
+    align-content:flex-start;
     @include breakPoint(firstBreak) {
         flex:0 1 calc(100% / 3);
+    }
+    @include breakPoint(secondBreak){
+        flex:0 1 calc(100% / 2)
     }
     .container__card {
         position: relative;
@@ -133,15 +135,21 @@ aside {
         }
         .container__text {
             // border:1px solid red;
-            font-size:2.5rem;
+            font-size:3rem;
             position:absolute;
             top:60%;
             right:3%;
             bottom:-20%;
             left:3%;
             overflow:hidden;
-            text-transform: uppercase;
             font-family:$cardFont;
+            @include breakPoint(thirdBreak) {
+                font-size:2.5rem;
+                top:55%;
+            }
+            @include breakPoint(fourthBreak) {
+                font-size:2rem;
+            }
         }
         .btn--delete, .button {
             display:none;
@@ -153,4 +161,3 @@ aside {
 .button {
     z-index:10;
 }
-

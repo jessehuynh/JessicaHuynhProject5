@@ -1,18 +1,31 @@
 .container {
+     label {
+            text-align: center;
+            width:100%;
+            display:inline-block;
+            line-height:2;
+        }
     // background:lighten($primary, 1.5%);
     .container__form {
         display:grid;
         grid-template-rows:repeat(4,1fr);
+        position: relative;
         .form__input {
             border:1px solid $light;
             background:transparent;
             text-align: center;
+            &:focus {
+                border-bottom:2px solid $primary;
+            }
         }
         .form__btn:not(.form__btn--picker){
             border:1px solid $light;
             background:transparent;
             margin:5px 0;
             padding:10px;
+            &:hover {
+                border:1px solid $primary;
+            }
         }
     }
 
@@ -31,6 +44,10 @@
     .container__card {
         width:calc(100% / 3);
         // background:$white;
+        &:hover {
+            transform:scale(1.2);
+            cursor:pointer;
+        }
         @include breakPoint(secondBreak) {
             width:calc(100% / 2);
             // width:80%;
@@ -40,13 +57,6 @@
         }
       
     }
-}
-
-.container__btn {
-    border:1px solid $light;
-    background:transparent;
-    margin:5px 0;
-    padding:10px;
 }
 
 .container--colors {

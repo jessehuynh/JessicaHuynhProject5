@@ -48,7 +48,7 @@ class CardCollection extends Component {
     deleteCard = (cardID) => {
         const cardRef = firebase.database().ref(`/${cardID}`)
         const confirm = window.confirm('WARNING: This will permanently remove this card. Do you want to continue?');
-        if (confirm === true && cardID != '-LLX95oBH9uXT7exeJ2o') {
+        if (confirm === true && cardID != '-LLXksvIQDnmdxpsdF5Q' && cardID != '-LLXl-KWYPfCXbuy24bK') {
             cardRef.remove();
         }
     }
@@ -56,15 +56,14 @@ class CardCollection extends Component {
         console.log(this.state.card)
         return (
             <section className="container__catalog">
-            
-                {/* <h3>Card Catalog</h3> */}
                 
                 {this.state.card.map((card)=>{
                     return (
+                        // CARD CATALOG SECTION
                         <section className="container container--collection" id="capture">
                             <figure className="container__card" style={{backgroundColor: card.cardColor}} id={card.key}>
                                 <img id="mirror" class="canvas__mirror"  src={card.image}/>
-                                <h5 className="container__text">{card.message}</h5>
+                                <h4 className="container__text">{card.message}</h4>
                                 <a href="#" onClick={this.saveImage} class="button" id="btn--download" download><i class="fas fa-file-download"></i></a>
                                 <button className="btn--delete" onClick={
                                     () => {this.deleteCard(card.key) 

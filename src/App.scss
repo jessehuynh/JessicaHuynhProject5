@@ -1,5 +1,6 @@
 @import 'partials/_setup.scss';
 @import 'partials/_utils.scss';
+@import 'partials/_header.scss';
 @import 'partials/_main.scss';
 @import 'partials/_card.scss';
 @import 'partials/_palette.scss';
@@ -8,10 +9,13 @@
 	--base: #EBDCC2;
 }
 
+* {
+	transition: all 0.3s ease-in-out;
+}
 
 body {
 	background:$background;
-	font-size:1.6rem;
+	font-size:1.8rem;
 	font-family:$baseFont;
 	font-weight:100;
 	height:100%;
@@ -22,9 +26,11 @@ img {
 	display: block;
 }
 
+
 h2 {
-	text-align: center;
-	font-size:4rem;
+	font-size:4.5rem;
+	margin:0;
+	letter-spacing: 2px;
 }
 
 h4 {
@@ -32,23 +38,31 @@ h4 {
 	font-size:4rem;
 }
 
+h5 {
+	margin:0;
+	position: relative;
+	bottom:10px;
+	letter-spacing:3px;
+}
+
 .overlay {
 	// border:1px solid red;
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
+	height:100vh;
 	z-index:10;
 	.wrapper {
 		display:flex;
+		justify-content: center;
 		width:50%;
 		// border:1px solid green;
 		svg {
 			fill:none;
+			width:100%;
+			&:hover {
+				transform:scale(1.2);
+			}
 		}
 	}
 	.G, .E, .T, .C, .R, .E2, .A, .T2, .I, .V, .E3 {
@@ -58,39 +72,39 @@ h4 {
 }
 
 #G, #E, #T, #C, #R, #E2, #A, #T2, #I, #V, #E3 {
-	animation:slowfill 8s forwards infinite;
+	animation:slowfill 3s forwards infinite;
 }
 
 #E {
-    animation-delay:0.5s;
+    animation-delay:0.25s;
 }
 
 #T {
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 #C {
-    animation-delay: 1.5s;
+    animation-delay: 0.75s;
 }
 #R {
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 #E2 {
-    animation-delay: 2.5s;
+    animation-delay: 1.25s;
 }
 #A {
-    animation-delay: 3s;
+    animation-delay: 1.50s;
 }
 #T2 {
-    animation-delay: 3.5s;
+    animation-delay: 1.75s;
 }
 #I {
-    animation-delay: 4s;
+    animation-delay: 2s;
 }
 #V {
-	animation-delay: 4.5s;
+	animation-delay: 2.25s;
 }
 #E3 {
-	animation-delay: 5s;
+	animation-delay: 2.5s;
 
 }

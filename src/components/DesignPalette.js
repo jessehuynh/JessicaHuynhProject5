@@ -30,6 +30,7 @@ class DesignPalette extends Component {
     }
     render(){
         return (
+            // DESIGN PALETTE
             <section className="container container--design">
                 <ImageCart changeImage={this.changeImage}/>
                 <ColorPalette addText={this.addText} addColor={this.addColor} />
