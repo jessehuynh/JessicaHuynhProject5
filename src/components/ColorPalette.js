@@ -32,7 +32,6 @@ class ColorPalette extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addText(this.state.message, this.state.cardColor);
-
     }
     presetColor = (e) => {
         this.setState({

@@ -324,14 +324,16 @@ aside {
   .container .container__form .form__input {
     border: 1px solid #F7FBFC;
     background: transparent;
-    text-align: center; }
+    text-align: center;
+    outline: none; }
     .container .container__form .form__input:focus {
       border-bottom: 2px solid #8E8E8E; }
   .container .container__form .form__btn:not(.form__btn--picker) {
     border: 1px solid #F7FBFC;
     background: transparent;
     margin: 5px 0;
-    padding: 10px; }
+    padding: 10px;
+    outline: none; }
     .container .container__form .form__btn:not(.form__btn--picker):hover {
       border: 1px solid #8E8E8E; }
 

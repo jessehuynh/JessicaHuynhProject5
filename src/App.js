@@ -32,8 +32,14 @@ class App extends Component {
     // console.log(savedCard);
     this.setState({
        card: savedCard,
-    }, () => {
-      // console.log(savedCard);
+    },() => {
+      this.setState({
+        message:'',
+        cardColor:'#FFFFFF',
+        image:'',
+      }, () => {
+        document.getElementById('message').value = ''
+      })
     })
   }
   updateText = (message) => {

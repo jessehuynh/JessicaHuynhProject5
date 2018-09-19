@@ -39,12 +39,16 @@ class CardCollection extends Component {
             // console.log(cardListArray)
         })
     }
-    // saveImage = () => {
-    //     html2canvas(document.querySelector("#capture")).then(canvas => {
-    //         const download = (document.querySelector('.saved').appendChild(canvas)).toDataURL("image/png");
-    //         console.log(canvas)
-    //     });
-    // }
+    saveImage = () => {
+        // let htmlObj = html2canvas(document.getElementById('capture'))
+        // var queue = htmlObj.Parse();
+        // var canvas = htmlObj.Renderer(queue, { elements: { length: 1 } });
+        // var img = canvas.toDataURL();
+        // window.open(img);
+        html2canvas(document.getElementById('capture')).then(canvas => {
+            document.querySelector('.saved').appendChild(canvas) 
+        });
+    }
     deleteCard = (cardID) => {
         const cardRef = firebase.database().ref(`/${cardID}`)
         const confirm = window.confirm('WARNING: This will permanently remove this card. Do you want to continue?');
@@ -60,18 +64,18 @@ class CardCollection extends Component {
                 {this.state.card.map((card)=>{
                     return (
                         // CARD CATALOG SECTION
-                        <section className="container container--collection" id="capture">
-                            <figure className="container__card" style={{backgroundColor: card.cardColor}} id={card.key}>
+                        <section className="container container--collection">
+                            <figure className="container__card" id="capture" style={{backgroundColor: card.cardColor}} id={card.key}>
                                 <img id="mirror" class="canvas__mirror"  src={card.image}/>
                                 <h4 className="container__text">{card.message}</h4>
-                                <a href="#" class="button" id="btn--download" download><i class="fas fa-file-download"></i></a>
+                                <a href="#" class="button" id="btn--download" onClick={this.saveImage}><i class="fas fa-file-download"></i></a>
                                 <button className="btn--delete" onClick={
                                     () => {this.deleteCard(card.key) 
                                     }} id={card.key}>
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                             </figure>
-                            {/* <div className="saved"></div> */}
+                            <div className="saved"></div>
                         </section>
                     )
                 })}
