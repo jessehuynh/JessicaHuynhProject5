@@ -4,6 +4,7 @@
 @import 'partials/_main.scss';
 @import 'partials/_card.scss';
 @import 'partials/_palette.scss';
+@import 'partials/_footer.scss';
 
 :root {
 	--base: #EBDCC2;
@@ -14,7 +15,7 @@
 }
 
 body {
-	background:$background;
+	background:white;
 	font-size:1.8rem;
 	font-family:$baseFont;
 	font-weight:100;

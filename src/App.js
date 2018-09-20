@@ -6,6 +6,7 @@ import Header from './components/Header';
 import DesignPalette from './components/DesignPalette';
 import Card from './components/Card';
 import CardCollection from './components/CardCollection';
+import Footer from './components/Footer'
 
 
 const dbRef = firebase.database().ref();
@@ -35,7 +36,7 @@ class App extends Component {
     },() => {
       this.setState({
         message:'',
-        cardColor:'#FFFFFF',
+        cardColor:'#E4E5F6',
         image:'',
       }, () => {
         document.getElementById('message').value = ''
@@ -76,6 +77,7 @@ class App extends Component {
             </aside>
           </div>
         </main>
+        <Footer/>
       </React.Fragment>
     );
   }

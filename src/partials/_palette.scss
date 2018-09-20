@@ -1,9 +1,18 @@
 .container {
+    // border:1px solid red;
      label {
             text-align: center;
             width:100%;
             display:inline-block;
             line-height:2;
+            background:radial-gradient(rgba(255,255,255,0.7), transparent);
+            border-top:1px dotted $white;
+            border-bottom:1px dotted $white;
+            font-family:$headingFont;
+            text-transform:uppercase;
+            color:$primary;
+            // text-shadow:1px 1px 0 $base;
+            // border:1px solid red;
         }
     // background:lighten($primary, 1.5%);
     .container__form {
@@ -11,7 +20,7 @@
         grid-template-rows:repeat(4,1fr);
         position: relative;
         .form__input {
-            border:1px solid $light;
+            border:1px solid $white;
             background:transparent;
             text-align: center;
             outline:none;
@@ -20,7 +29,7 @@
             }
         }
         .form__btn:not(.form__btn--picker){
-            border:1px solid $light;
+            border:1px solid $white;
             background:transparent;
             margin:5px 0;
             padding:10px;
@@ -34,30 +43,37 @@
 }
 
 .container--cart {
+    // border:1px solid purple;
     display:flex;
     flex-flow:row wrap;
     justify-content: space-around;
+    position: relative;
     @include breakPoint(secondBreak){
         justify-content: space-around;
-        // border:1px solid purple;
         margin:0 auto;
         width:85%;
     }
     .container__card {
         width:calc(100% / 3);
-        // background:$white;
+        transform:scale(1.5);
+        // background:rgba(255,255,255,0.3);
+        // border:1px solid red;
         &:hover {
             transform:scale(1.2);
             cursor:pointer;
         }
+        @include breakPoint(firstBreak) {
+            transform:scale(1);
+            height:12rem;
+        }
         @include breakPoint(secondBreak) {
             width:calc(100% / 2);
+
             // width:80%;
         }
         @include breakPoint(thirdBreak) {
             width:calc(100% / 3);
-        }
-      
+        }      
     }
 }
 
@@ -66,18 +82,13 @@
     .container__form {
         // border:1px solid purple;
         .form__btn--picker {
-            border:1px solid $light;
+            border:1px solid $white;
             margin:5px 0;
             width:100%;
             padding:0;
             height:40px;
             background:transparent;
-            
+            outline:none;
         }
-        
     }
-}
-
-.cat {
-    display:none;
 }

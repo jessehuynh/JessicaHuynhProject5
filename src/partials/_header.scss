@@ -1,9 +1,10 @@
 header {
 	text-align: center;
-	color:$primary;
+	color:$white;
+	text-shadow:1px 1px 2px $base;
 	font-family:$headingFont;
 	text-transform: uppercase;
     letter-spacing: 2px;
-    background:darken($background, 10%);
-    border-bottom:2px dotted $light;
+    background:linear-gradient(to right, transparent, #fbe4e2, transparent);
+    // border-bottom:1px solid $light;
 }

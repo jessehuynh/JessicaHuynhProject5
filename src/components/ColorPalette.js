@@ -7,7 +7,7 @@ class ColorPalette extends Component {
         super();
         this.state = {
             message: '',
-            cardColor: '#DDEAF3',
+            cardColor: '#E4E5F6',
             image:'',
         }
     }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import html2canvas from 'html2canvas';
-import Canvas2Image from 'canvas2image';
+import { saveAs } from 'file-saver/FileSaver';
+import FileSaver from 'file-saver';
 
+// import Canvas2Image from 'canvas2image';
 
 
 const dbRef = firebase.database().ref();
@@ -39,14 +41,26 @@ class CardCollection extends Component {
             // console.log(cardListArray)
         })
     }
-    saveImage = () => {
-        // let htmlObj = html2canvas(document.getElementById('capture'))
-        // var queue = htmlObj.Parse();
-        // var canvas = htmlObj.Renderer(queue, { elements: { length: 1 } });
-        // var img = canvas.toDataURL();
-        // window.open(img);
-        html2canvas(document.getElementById('capture')).then(canvas => {
-            document.querySelector('.saved').appendChild(canvas) 
+    saveImage = (e) => {
+        const capture = e.target.id
+        console.log(e.target)
+        // html2canvas(document.getElementById('capture')).then(function (canvas) {
+        //     // Export canvas as a blob 
+        //     canvas.toBlob(function (blob) {
+        //         // Generate file download
+        //         FileSaver.saveAs(blob, "bestECard.png");
+        //     });
+        // });
+        // console.log(this.refs, capture)
+    
+        html2canvas(this.refs[capture]).then(function (canvas) {
+            // Export canvas as a blob 
+            // console.log(canvas)
+            canvas.toBlob(function (blob) {
+                // console.log(blob)
+                // Generate file download
+                FileSaver.saveAs(blob, "bestECard.png");
+            });
         });
     }
     deleteCard = (cardID) => {
@@ -62,13 +76,14 @@ class CardCollection extends Component {
             <section className="container__catalog">
                 
                 {this.state.card.map((card)=>{
+                    // console.log(card.key)
                     return (
                         // CARD CATALOG SECTION
                         <section className="container container--collection">
-                            <figure className="container__card" id="capture" style={{backgroundColor: card.cardColor}} id={card.key}>
-                                <img id="mirror" class="canvas__mirror"  src={card.image}/>
+                            <figure className="container__card capture" ref={card.key} style={{backgroundColor: card.cardColor}}>   
+                                <img id="mirror" class="canvas__mirror" src={card.image}/>
                                 <h4 className="container__text">{card.message}</h4>
-                                <a href="#" class="button" id="btn--download" onClick={this.saveImage}><i class="fas fa-file-download"></i></a>
+                                <button class="button" id={card.key} onClick={this.saveImage}><i id={card.key} class="fas fa-file-download"></i></button>
                                 <button className="btn--delete" onClick={
                                     () => {this.deleteCard(card.key) 
                                     }} id={card.key}>

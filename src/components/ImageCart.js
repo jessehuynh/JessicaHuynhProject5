@@ -4,10 +4,9 @@ import React, { Component } from 'react';
 import halloween from '../assets/halloween-pumpkin.png';
 import cake from '../assets/cake-slice.png';
 import ghost from '../assets/ghost.png';
-import star from '../assets/star.png';
-import icecream from '../assets/soft-serve.png';
 import witch from '../assets/witch-hat.png';
 import cat from '../assets/cat.png';
+import candy from '../assets/candy-corn.png'
 
 
 class ImageCart extends Component {
@@ -36,13 +35,10 @@ class ImageCart extends Component {
                     <img onClick={this.clickImage} src={cake} alt=""/>
                 </figure>
                 <figure className="container__card">
-                    <img onClick={this.clickImage} src={star} alt=""/>
+                    <img onClick={this.clickImage} src={cat} alt="" />
                 </figure>
                 <figure className="container__card">
-                    <img onClick={this.clickImage} src={icecream} alt=""/>
-                </figure>
-                <figure className="container__card cat">
-                    <img onClick={this.clickImage} src={cat} alt="" />
+                    <img onClick={this.clickImage} src={candy} alt="" />
                 </figure>
             </section>
             </React.Fragment>
