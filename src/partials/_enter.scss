@@ -1,0 +1,64 @@
+
+.overlay {
+	// border:1px solid red;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:100vh;
+    z-index:10;
+    background:$background;
+	.wrapper {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+		width:100%;
+        // border:1px solid green;
+		svg {
+            fill:none;
+            stroke:$primary;
+            width:70rem;
+            transition:transform 0.7s;
+            @include breakPoint(firstBreak){
+                width:50rem;
+            }
+            @include breakPoint(secondBreak) {
+                width:40rem;
+            }
+            @include breakPoint(thirdBreak) {
+                width:30rem;
+            }
+            z-index:2;
+        }
+        a {
+            text-decoration:none;
+            border:1px solid $primary;
+            padding:1rem 2.5rem;
+            font-size:3rem;
+            border-radius:30px;
+            color:$white;
+            background:#CDD6EE;
+            letter-spacing:1.2px;
+            position: relative;
+            bottom:2rem;
+            animation:slowIn 3s forwards;
+            opacity:0;
+            animation-delay: 4s;
+            &:hover, &:active {
+                background:none;
+                color:#CDD6EE;
+                border:1px solid #CDD6EE;
+            }
+        }
+	}
+	#S, #E, #N, #D, #A, #T, #H, #O, #U, #G, #H2, #T2 {
+        animation:strokeAnim 5s forwards;
+        fill:$background;
+	}
+}
+
+
+#S, #E, #N, #D, #A, #T, #H, #O, #U, #G, #H2, #T2 {
+    stroke-dasharray: 955px;
+    stroke-dashoffset: -955px;
+}

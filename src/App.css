@@ -146,11 +146,71 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 html {
   font-size: 62.5%; }
 
-@keyframes slowfill {
+@keyframes strokeAnim {
+  from {
+    stroke-dashoffset: -965px; }
+  to {
+    stroke-dashoffset: 0px; } }
+
+@keyframes slowIn {
   0% {
-    fill: #8E8E8E; }
+    opacity: 0; }
   100% {
-    fill: transparent; } }
+    opacity: 1; } }
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 10;
+  background: #E8F1F7; }
+  .overlay .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .overlay .wrapper svg {
+      fill: none;
+      stroke: #8E8E8E;
+      width: 70rem;
+      transition: transform 0.7s;
+      z-index: 2; }
+      @media (max-width: 1150px) {
+        .overlay .wrapper svg {
+          width: 50rem; } }
+      @media (max-width: 780px) {
+        .overlay .wrapper svg {
+          width: 40rem; } }
+      @media (max-width: 550px) {
+        .overlay .wrapper svg {
+          width: 30rem; } }
+    .overlay .wrapper a {
+      text-decoration: none;
+      border: 1px solid #8E8E8E;
+      padding: 1rem 2.5rem;
+      font-size: 3rem;
+      border-radius: 30px;
+      color: white;
+      background: #CDD6EE;
+      letter-spacing: 1.2px;
+      position: relative;
+      bottom: 2rem;
+      animation: slowIn 3s forwards;
+      opacity: 0;
+      animation-delay: 4s; }
+      .overlay .wrapper a:hover, .overlay .wrapper a:active {
+        background: none;
+        color: #CDD6EE;
+        border: 1px solid #CDD6EE; }
+  .overlay #S, .overlay #E, .overlay #N, .overlay #D, .overlay #A, .overlay #T, .overlay #H, .overlay #O, .overlay #U, .overlay #G, .overlay #H2, .overlay #T2 {
+    animation: strokeAnim 5s forwards;
+    fill: #E8F1F7; }
+
+#S, #E, #N, #D, #A, #T, #H, #O, #U, #G, #H2, #T2 {
+  stroke-dasharray: 955px;
+  stroke-dashoffset: -955px; }
 
 header {
   text-align: center;
@@ -360,7 +420,8 @@ aside {
       width: 85%; } }
   .container--cart .container__card {
     width: calc(100% / 3);
-    transform: scale(1.5); }
+    transform: scale(1.5);
+    height: 12rem; }
     .container--cart .container__card:hover {
       transform: scale(1.2);
       cursor: pointer; }
@@ -425,54 +486,3 @@ h5 {
   position: relative;
   bottom: 10px;
   letter-spacing: 3px; }
-
-.overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  z-index: 10; }
-  .overlay .wrapper {
-    display: flex;
-    justify-content: center;
-    width: 50%; }
-    .overlay .wrapper svg {
-      fill: none;
-      width: 100%; }
-      .overlay .wrapper svg:hover {
-        transform: scale(1.2); }
-  .overlay .G, .overlay .E, .overlay .T, .overlay .C, .overlay .R, .overlay .E2, .overlay .A, .overlay .T2, .overlay .I, .overlay .V, .overlay .E3 {
-    animation: slowfill 8s forwards infinite; }
-
-#G, #E, #T, #C, #R, #E2, #A, #T2, #I, #V, #E3 {
-  animation: slowfill 3s forwards infinite; }
-
-#E {
-  animation-delay: 0.25s; }
-
-#T {
-  animation-delay: 0.5s; }
-
-#C {
-  animation-delay: 0.75s; }
-
-#R {
-  animation-delay: 1s; }
-
-#E2 {
-  animation-delay: 1.25s; }
-
-#A {
-  animation-delay: 1.50s; }
-
-#T2 {
-  animation-delay: 1.75s; }
-
-#I {
-  animation-delay: 2s; }
-
-#V {
-  animation-delay: 2.25s; }
-
-#E3 {
-  animation-delay: 2.5s; }
